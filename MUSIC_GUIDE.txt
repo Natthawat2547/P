@@ -1,0 +1,127 @@
+<!-- 
+    === ตัวอย่างวิธีใส่เพลง ===
+    
+    เลือกหนึ่งในวิธีต่อไปนี้:
+
+    1️⃣ วิธีที่ 1: ใช้เพลง Online โดยตรง
+    ==================================== -->
+
+    ตัวอย่าง URL เพลง:
+    - YouTube Music (Preview): https://youtu.be/SONG_ID
+    - Spotify Preview: https://p.scdn.co/mp3-preview/PREVIEW_ID
+    - Free Music Sites:
+      * https://www.bensound.com/ (royalty-free)
+      * https://www.incompetech.com/ (royalty-free)
+      * https://freepd.com/ (royalty-free)
+
+    วิธีใช้:
+    เปิด script.js ค้นหา:
+    ```
+    // bgMusic.src = 'path/to/your/music.mp3';
+    ```
+    เปลี่ยนเป็น:
+    ```
+    bgMusic.src = 'https://www.bensound.com/bensound-music/bensound-ukulele.mp3';
+    ```
+
+    2️⃣ วิธีที่ 2: ใช้ไฟล์เพลงจากโฟลเดอร์
+    ================================
+    
+    ขั้นตอน:
+    1. วางไฟล์เพลง (love-song.mp3) ในโฟลเดอร์เดียวกับ index.html
+    2. เสร็จ! ไม่ต้องแก้ไขอะไรเพิ่มเติม
+    
+    ฟอร์แมตเพลงที่รองรับ:
+    - MP3 (.mp3) ✅ แนะนำ
+    - WAV (.wav) ✅
+    - OGG (.ogg) ✅
+    - AAC (.aac) ✅
+    - FLAC (.flac) ✅
+
+    3️⃣ วิธีที่ 3: ใช้ Google Drive
+    =============================
+    
+    ขั้นตอน:
+    1. อัปโหลดไฟล์เพลงไปยัง Google Drive
+    2. คลิกขวาที่ไฟล์ → Get link
+    3. ใส่สิทธิ์ "Anyone with the link" → Copy link
+    4. ใส่ลิงค์ใน script.js:
+    
+    ```javascript
+    // Replace FILE_ID with actual ID from Google Drive link
+    bgMusic.src = 'https://drive.google.com/uc?export=download&id=FILE_ID';
+    ```
+
+    4️⃣ วิธีที่ 4: ใช้ GitHub (สำหรับ Non-Commercial)
+    ============================================
+    
+    ขั้นตอน:
+    1. อัปโหลด Repository ไปยัง GitHub
+    2. ใส่ไฟล์เพลงใน Repository
+    3. ใช้ Raw GitHub URL:
+    
+    ```javascript
+    bgMusic.src = 'https://raw.githubusercontent.com/USERNAME/REPO/main/love-song.mp3';
+    ```
+    
+    ⚠️ หมายเหตุ: GitHub มีข้อจำกัดแบนวิดท์ และมีปัญหากับบางเบราว์เซอร์
+
+    5️⃣ วิธีที่ 5: ใช้ Cloudinary (แนะนำ!)
+    ===================================
+    
+    ขั้นตอน:
+    1. สร้างบัญชี Cloudinary ฟรี (cloudinary.com)
+    2. อัปโหลดไฟล์เพลง
+    3. คัดลอก URL
+    4. ใส่ลิงค์ใน script.js:
+    
+    ```javascript
+    bgMusic.src = 'https://res.cloudinary.com/YOUR_CLOUD_NAME/video/upload/YOUR_PUBLIC_ID.mp3';
+    ```
+
+
+    === เลือกทีเพลงแนะนำ ===
+    📍 เพลงรักที่เหมาะสม:
+    
+    1. "Night of Your Life" - Bensound
+       https://www.bensound.com/bensound-music/bensound-ukulele.mp3
+    
+    2. "A Hazy Shade of Winter" - Incompetech
+    
+    3. "Romantic" - Free Background Music
+       https://youtu.be/jgpBB4Mk6sI
+    
+    4. ค้นหาใน:
+       - Pixabay Music (pixabay.com/music)
+       - Bensound (bensound.com)
+       - Free Music Archive (freemusicarchive.org)
+
+
+    === ตัวอย่าง HTML ถ้าต้องการ ===
+    
+    หากต้องการให้ผู้ใช้เลือกเพลงเอง:
+    
+    ```html
+    <div class="music-control">
+        <input type="file" id="musicFile" accept="audio/*" />
+        <button onclick="loadCustomMusic()">โหลดเพลง</button>
+    </div>
+    ```
+    
+    Script:
+    ```javascript
+    function loadCustomMusic() {
+        const file = document.getElementById('musicFile').files[0];
+        if (file) {
+            const url = URL.createObjectURL(file);
+            bgMusic.src = url;
+        }
+    }
+    ```
+
+    === โปรแกรมแนะนำสำหรับแก้ไขไฟล์เสียง ===
+    - Audacity (ฟรี) - https://www.audacityteam.org/
+    - ffmpeg (ฟรี, Command-line) - https://ffmpeg.org/
+    - Online: https://www.mp3cut.net/
+
+-->
